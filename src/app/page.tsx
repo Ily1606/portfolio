@@ -91,12 +91,12 @@ export default async function Home() {
           {/* left column */}
           {/* blog */}
           <div className="flex flex-col gap-16">
-            {blogList.map((blog: BlogType) => (
+            {/* {blogList.map((blog: BlogType) => (
               <BlogCard key={blog.slug} blog={blog} titleAs='h3'/>
             ))}
             <Link href="/blogs" className="flex flex-row items-center text-sm text-primary hover:underline capitalize font-semibold">Read more blogs 
               <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
-            </Link>
+            </Link> */}
           </div>
 
           {/* right column */}
@@ -105,10 +105,10 @@ export default async function Home() {
             <Education />
 
             {/* <Newsletter /> */}
-            <Feed />
+            {/* <Feed /> */}
           </div>
         </div>
-        <div className="mx-auto flex flex-col max-w-xl gap-6 lg:max-w-none my-4 py-8 border-t border-muted">
+        {/* <div className="mx-auto flex flex-col max-w-xl gap-6 lg:max-w-none my-4 py-8 border-t border-muted">
           <h2 className="text-3xl font-semibold tracking-tight md:text-5xl opacity-80">
             {activityHeadLine}
           </h2>
@@ -117,7 +117,7 @@ export default async function Home() {
           </p>
           <TweetGrid />
           <MarqueeVertical />
-        </div>
+        </div> */}
       </Container>
     </>
   )

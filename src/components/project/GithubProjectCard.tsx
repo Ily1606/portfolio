@@ -8,7 +8,10 @@ import Link from 'next/link'
 
 
 export function GithubProjectCard({ project, titleAs }: { project: ProjectItemType, titleAs?: keyof React.JSX.IntrinsicElements }) {
-  const utmLink = `https://${project.link.href}?utm_source=${utm_source}`
+  let utmLink = '';
+  if(project.link) {
+    utmLink = `https://${project.link.href}?utm_source=${utm_source}`
+  }
   let Component = titleAs ?? 'h2'
   return (
     <li className='group relative flex flex-col items-start h-full'>
@@ -33,7 +36,7 @@ export function GithubProjectCard({ project, titleAs }: { project: ProjectItemTy
                 {project.gitStars}
               </>
             )}
-            { project.gitForks && (
+            { project.gitForks !== undefined && (
               <>
                 <GitFork size={16} weight="duotone" /> 
                 {project.gitForks}
@@ -41,13 +44,15 @@ export function GithubProjectCard({ project, titleAs }: { project: ProjectItemTy
             )}
           </div>
         </div>
-        <Link
-          href={utmLink}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='absolute inset-0 z-20'>
+        {project.link && (
+          <Link
+            href={utmLink}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='absolute inset-0 z-20'>
           <ArrowRight size={32} weight="duotone" className="absolute bottom-6 right-4 h-4 w-4 group-hover:text-primary group-hover:cursor-pointer" />
         </Link>
+        )}
       </div>
     </li>
   )

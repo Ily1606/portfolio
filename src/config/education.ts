@@ -13,10 +13,10 @@ export type EducationItemType = {
   
   export const educationList: Array<EducationItemType> = [
     {
-      school: 'Southern University of Science and Technology',
+      school: 'Vietnam and Korea University of Information and Communication Technology',
       major: 'Computer Science and Technology',
       logo: 'college',
-      start: '2016',
-      end: '2020'
+      start: '2019',
+      end: '2024'
     },
   ]
